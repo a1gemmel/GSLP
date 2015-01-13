@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <string>
 #include <math.h>
 
@@ -84,8 +85,20 @@ int main(){
 			     Exercise("",0,0,0,0)}};
 
 
-  cout << "== Gemm's Phrak's Greyskull Linear Program Variant Variant ==" << endl <<
-    "Last set is always AMRAP. If 10 reps, double increment." << endl;
+  cout << "== Gemm's Phrak's Greyskull Linear Program Variant Variant ==" << endl;
+
+  for (int i = 0; i < 4; i++) {
+    for (int j = 0; j < 5;j++) {
+      Exercise * e = &(routine[i][j]);
+      if (e->name != "") {
+       
+	cout << "Enter starting " << e->name << " " << e->sets << "x" << e->reps << " weight: ";
+	cin >> e->weight;
+      }
+    }
+  }
+
+
   for (int day = 0; day < 36; day++) {
     cout << "===Week "<< day / 3 + 1 << "===" << endl;
     if (day % 3 == 0) {
